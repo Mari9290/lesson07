@@ -6,12 +6,11 @@ const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
 // Результат функции: массив из всех студентов, которые сдали экзамен.
 
 const filterS = ([...cloneAll], [...cloneFailed]) => {
-    const [stud1, stud2, stud3] = cloneFailed;
-    cloneAll.splice(cloneAll.indexOf(stud1), 1);
-    cloneAll.splice(cloneAll.indexOf(stud2), 1);
-    cloneAll.splice(cloneAll.indexOf(stud3), 1);
+    for (let i = 0; i < cloneFailed.length; i++) {
+        cloneAll.splice(cloneAll.indexOf(cloneFailed[i]), 1);
+    }
     return cloneAll;
-
 };
 
 filterS(allStudents, failedStudents);
+
